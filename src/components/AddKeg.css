@@ -1,3 +1,16 @@
+.addRadio {
+  display: grid;
+  position: relative;
+  grid-template-areas:
+  'i a b c d'
+  'j e f g h';
+  grid-column-gap: 5px;
+  background-color: lightblue;
+  width: 80vw;
+  margin: 10px;
+  padding: 10px;
+}
+
 .size {
   opacity: 0;
   width: 0;
@@ -5,23 +18,54 @@
 }
 
 label {
+position: relative;
 display: block;
+
 text-align: center;
-font-size: 12px;
+font-size: 2vw;
 font-weight: bold;
-width: 100px;
-height: 100px;
+width: 15vw;
+height: 15vw;
 background-color: palegreen;
 color: white;
 margin: 5px;
-
 }
 
 label span{
 display: block;
 text-align: center;
-font-size: 8px;
+font-size: 2vw;
 font-style: italic;
+}
 
+.cornelius {
+  grid-area: a;
+}
 
+.sixth {
+  grid-area: b;
+}
+
+.quarter  {
+  grid-area: c;
+}
+
+.slim  {
+  grid-area: d;
+}
+
+.half  {
+  grid-area: e;
+  position: absolute;
+  left: 10vw;
+}
+
+.litre {
+  grid-area: f;
+  left: 10vw;
+}
+
+.mini {
+  grid-area: g;
+  left: 10vw;
 }
