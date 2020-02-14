@@ -21,7 +21,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='cornelius'/>
-    Cornelius Keg <span>40 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Cornelius Keg <span className='smallSpan'>40 pints</span></span></span></label>
 
     <label className='sixth'>
     <input
@@ -30,7 +30,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='sixth'/>
-    Sixth Barrel Keg <span>41 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Sixth Barrel Keg <span className='smallSpan'>41 pints</span></span></span></label>
 
     <label className='quarter'>
     <input
@@ -39,7 +39,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='quarter'/>
-    Quarter Barrel Keg <span>62 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Quarter Barrel Keg <span className='smallSpan'>62 pints</span></span></span></label>
 
     <label className='slim'>
     <input
@@ -48,7 +48,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='slim'/>
-    Slim Quarter Barrel Keg <span>62 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Slim Quarter Barrel Keg <span className='smallSpan'>62 pints</span></span></span></label>
 
     <label className='half'>
     <input
@@ -57,7 +57,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='half'/>
-    Half Barrel Keg <span>124 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Half Barrel Keg <span className='smallSpan'>124 pints</span></span></span></label>
 
     <label className='litre'>
     <input
@@ -66,7 +66,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='litre'/>
-    50 Litre Keg <span>105 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>50 Litre Keg <span className='smallSpan'>105 pints</span></span></span></label>
 
     <label className='mini'>
     <input
@@ -75,7 +75,7 @@ function AddKeg() {
     name='size'
     className='size'
     value='mini'/>
-    Mini Keg <span>10 pints</span></label>
+    <span className='allSpan'><span className='bigSpan'>Mini Keg <span className='smallSpan'>10 pints</span></span></span></label>
     </div>
     <button type='submit'>Add Keg</button>
     </form>
