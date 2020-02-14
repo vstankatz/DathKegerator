@@ -4,15 +4,28 @@ import './AddKeg.css';
 function AddKeg() {
   return (
     <div className="addKegDiv">
-    <form>
+    <form className='form'>
+    <div class='formTitle'>
+    <h2>Add a Keg</h2>
+    </div>
+    <div className='nameDiv'>
     <input
     type='text'
     id='name'
     placeholder='Skywalker Cider...'/>
+    </div>
+    <div className='numberDiv'>
+    <label>
     <input
-    type='text'
+    type='number'
     id='content'
-    placeholder='Alchohol Content'/>
+    placeholder='3% - 14%'
+    step=".01"
+    min='3'
+    max='14'/>
+    %
+    </label>
+    </div>
     <div className='addRadio'>
     <label className='cornelius'>
     <input
@@ -77,7 +90,9 @@ function AddKeg() {
     value='mini'/>
     <span className='allSpan'><span className='bigSpan'>Mini Keg <span className='smallSpan'>10 pints</span></span></span></label>
     </div>
+    <div className='buttonDiv'>
     <button type='submit'>Add Keg</button>
+    </div>
     </form>
     </div>
   );
