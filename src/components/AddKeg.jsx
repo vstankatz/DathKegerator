@@ -16,15 +16,27 @@ function AddKeg() {
     </div>
     <div className='numberDiv'>
     <label>
+    <span className='percentDiv'>
     <input
     type='number'
     id='content'
-    placeholder='3% - 14%'
+    placeholder='3 - 14'
     step=".01"
     min='3'
     max='14'/>
-    %
+    % </span>
     </label>
+    </div>
+    <div className='priceDiv'>
+    <span className='addPrice'>$
+    <input
+    type='number'
+    id='price'
+    placeholder='3.50'
+    step='.01'
+    min='.50'
+    max='100'/>
+    </span>
     </div>
     <div className='addRadio'>
     <label className='cornelius'>
