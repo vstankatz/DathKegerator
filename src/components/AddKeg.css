@@ -2,7 +2,7 @@
   display: grid;
   grid-template-areas:
   'head head head'
-  'name blank number'
+  'name number price'
   'size size size'
   'bl button bla';
   justify-content: center;
@@ -14,16 +14,67 @@
 
 .nameDiv {
   grid-area: name;
+  width:30vw;
+  height:20vw;
+  background-color: lightpink;
+}
+
+.nameDiv input{
+  font-size: 2vw;
+  width: 20vw;
 }
 
 .numberDiv {
   grid-area: number;
+  width:30vw;
+  height:20vw;
+  justify-content: center;
+  background-color: lightgrey;
+}
 
+.numberDiv, .numberDiv input {
+  font-size: 2vw;
+  display: inline-flex;
+  font-size: 2vw;
+}
+
+.numberDiv input {
+  width: 9vw;
+  text-align: right;
+}
+
+.addPrice {
+  flex: 1;
+  font-size: 2vw;
+}
+
+.priceDiv {
+  width:30vw;
+  height:20vw;
+  background-color: coral;
+}
+
+.priceDiv, .priceDiv input {
+  grid-area: price;
+  display: inline-flex;
+  font-size: 2vw;
+  margin: 0px;
+  justify-content: center;
+}
+
+.priceDiv input {
+  width: 9vw;
+}
+.percentDiv {
+  flex: 1;
+  font-size: 2vw;
 }
 
 .buttonDiv {
   grid-area: button;
 }
+
+
 .addRadio {
   grid-area: size;
   display: grid;
@@ -40,7 +91,7 @@
 
 [type=number] {
   -moz-appearance:textfield;
-  text-align: right;
+  border: 0;
 }
 
 [type=radio]:checked + span {
