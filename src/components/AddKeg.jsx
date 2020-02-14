@@ -14,7 +14,7 @@ function AddKeg() {
     id='content'
     placeholder='Alchohol Content'/>
     <div className='addRadio'>
-    <label for='cornelius'>
+    <label className='cornelius'>
     <input
     type='radio'
     id='cornelius'
@@ -23,7 +23,7 @@ function AddKeg() {
     value='cornelius'/>
     Cornelius Keg <span>40 pints</span></label>
 
-    <label for='sixth'>
+    <label className='sixth'>
     <input
     type='radio'
     id='sixth'
@@ -32,7 +32,7 @@ function AddKeg() {
     value='sixth'/>
     Sixth Barrel Keg <span>41 pints</span></label>
 
-    <label for='quarter'>
+    <label className='quarter'>
     <input
     type='radio'
     id='quarter'
@@ -41,7 +41,7 @@ function AddKeg() {
     value='quarter'/>
     Quarter Barrel Keg <span>62 pints</span></label>
 
-    <label for='slim'>
+    <label className='slim'>
     <input
     type='radio'
     id='slim'
@@ -50,7 +50,7 @@ function AddKeg() {
     value='slim'/>
     Slim Quarter Barrel Keg <span>62 pints</span></label>
 
-    <label for='half'>
+    <label className='half'>
     <input
     type='radio'
     id='half'
@@ -59,7 +59,7 @@ function AddKeg() {
     value='half'/>
     Half Barrel Keg <span>124 pints</span></label>
 
-    <label for='litre'>
+    <label className='litre'>
     <input
     type='radio'
     id='litre'
@@ -68,7 +68,7 @@ function AddKeg() {
     value='litre'/>
     50 Litre Keg <span>105 pints</span></label>
 
-    <label for='mini'>
+    <label className='mini'>
     <input
     type='radio'
     id='mini'
