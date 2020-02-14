@@ -11,13 +11,17 @@
   padding: 10px;
 }
 
+[type=radio]:checked + span {
+  border: 4px solid red;
+}
+
 .size {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-label {
+label span.allSpan  {
 position: relative;
 display: block;
 
@@ -31,7 +35,17 @@ color: white;
 margin: 5px;
 }
 
-label span{
+label span.bigSpan{
+width: 15vw;
+height: 15vw;
+display: block;
+text-align: center;
+font-size: 2vw;
+font-style: bold;
+}
+
+
+label span.smallSpan{
 display: block;
 text-align: center;
 font-size: 2vw;
@@ -56,16 +70,18 @@ font-style: italic;
 
 .half  {
   grid-area: e;
-  position: absolute;
+  position: relative;
   left: 10vw;
 }
 
 .litre {
   grid-area: f;
+  position: relative;
   left: 10vw;
 }
 
 .mini {
   grid-area: g;
+  position: relative;
   left: 10vw;
 }
