@@ -12,9 +12,9 @@ _This program was designed to imitate the functionality of an electronic taproom
 
 |Specs|Input|Output|
 |-|-|-|
-|The program should allow an employee to add a keg.| "124oz, %.5, Parsec Pilsner"| Keg List: Parsec Pilsner-%.5-full|
+|The program should allow an employee to add a keg.| "124oz, 5%, Parsec Pilsner"| Keg List: Parsec Pilsner-5%-full|
 |The program should allow an employee to edit a keg.| Edit "Parsec Pilsner" to "A Galaxy Far, Far Away Ale" |Keg List: A Galaxy Far, Far Away Ale|
-|The program should allow anyone to view kegs based on alcohol content.| Sort 🔼|<ul><li>Spacewalk Stout-%.7-75%</li><li>Parsec Pilsner-%.5-full</li></ul>|
+|The program should allow anyone to view kegs based on alcohol content.| Sort 🔼|<ul><li>Spacewalk Stout-7%</li><li>Parsec Pilsner-5%-full</li></ul>|
 
 <!-- |The program should allow the user to delete a keg. |Delete "A Galaxy Far, Far Away Ale" |Keg List: *empty*| -->
 
