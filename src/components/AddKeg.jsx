@@ -11,26 +11,72 @@ function AddKeg() {
     placeholder='Skywalker Cider...'/>
     <input
     type='text'
-    id='size'
-    placeholder='Pints in keg'/>
+    id='content'
+    placeholder='Alchohol Content'/>
+    <div className='addRadio'>
+    <label for='cornelius'>
     <input
     type='radio'
     id='cornelius'
     name='size'
+    className='size'
     value='cornelius'/>
-    <label for='cornelius'>Cornelius Keg <span>40 pints</span></label>
+    Cornelius Keg <span>40 pints</span></label>
+
+    <label for='sixth'>
     <input
     type='radio'
     id='sixth'
     name='size'
+    className='size'
     value='sixth'/>
-    <label for='sixth'>Sixth Barrel Keg <span>41 pints</span></label>
+    Sixth Barrel Keg <span>41 pints</span></label>
+
+    <label for='quarter'>
     <input
     type='radio'
     id='quarter'
     name='size'
+    className='size'
     value='quarter'/>
-    <label for='quarter'>Quarter Barrel Keg <span>62 pints</span></label>
+    Quarter Barrel Keg <span>62 pints</span></label>
+
+    <label for='slim'>
+    <input
+    type='radio'
+    id='slim'
+    name='size'
+    className='size'
+    value='slim'/>
+    Slim Quarter Barrel Keg <span>62 pints</span></label>
+
+    <label for='half'>
+    <input
+    type='radio'
+    id='half'
+    name='size'
+    className='size'
+    value='half'/>
+    Half Barrel Keg <span>124 pints</span></label>
+
+    <label for='litre'>
+    <input
+    type='radio'
+    id='litre'
+    name='size'
+    className='size'
+    value='litre'/>
+    50 Litre Keg <span>105 pints</span></label>
+
+    <label for='mini'>
+    <input
+    type='radio'
+    id='mini'
+    name='size'
+    className='size'
+    value='mini'/>
+    Mini Keg <span>10 pints</span></label>
+    </div>
     <button type='submit'>Add Keg</button>
     </form>
     </div>
