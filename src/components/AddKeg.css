@@ -1,0 +1,27 @@
+.size {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+label {
+display: block;
+text-align: center;
+font-size: 12px;
+font-weight: bold;
+width: 100px;
+height: 100px;
+background-color: palegreen;
+color: white;
+margin: 5px;
+
+}
+
+label span{
+display: block;
+text-align: center;
+font-size: 8px;
+font-style: italic;
+
+
+}
