@@ -1,12 +1,12 @@
 import React from 'react';
-import './Body.css';
+import './EditKeg.css';
 
-function Body() {
+function EditKeg() {
   return (
-    <div className="bodyDiv">
-    
+    <div className="editKegDiv">
+
     </div>
   );
 }
 
-export default Body;
+export default EditKeg;
