@@ -2,8 +2,9 @@ import React from 'react';
 import Body from './Body';
 import AgeCheck from './AgeCheck';
 import PropTypes from 'prop-types';
+import { Switch, Route} from 'react-router-dom';
 
-class SiteController extends React.Component {
+export default class SiteController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,22 +33,25 @@ handleTappingNewKeg(newKeg) {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.kegsVisibleOnPage) {
-      console.log('hit');
       currentlyVisibleContent = (
+        <Body onAgeConfirmation={this.props.onAgeConfirmation}/>
       )
     } else {
       currentlyVisibleContent = (
-        <Body onAgeConfirmation={this.props.onAgeConfirmation}/>
+        <AgeCheck onAgeCheck={this.state.handleAgeCheck}/>
       )
     }
 
   return(
     <div>
+    <Switch>
+    <Route exact path='/' render={()=><SiteController onAgeConfirmation={this.handleAgeCheck}/>} />
+    </Switch>
     {currentlyVisibleContent}
     </div>
   )
 }
 }
-export default SiteController;
 
+SiteController.propTypes = { onAgeCheck: PropTypes.func}
 SiteController.propTypes = { onAgeConfirmation: PropTypes.func}

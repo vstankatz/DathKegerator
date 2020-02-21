@@ -1,6 +1,8 @@
 import React from 'react';
 import './Body.css';
 import Keg from './Keg';
+import Header from './Header';
+import PropTypes from 'prop-types';
 
 var masterKegList = [
   {
@@ -23,14 +25,10 @@ var masterKegList = [
   }
 ];
 
-function Body {
+export default function Body(props) {
 
 
-  handleTappingNewKeg(newKeg) {
-    let newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKeg.id]: newKeg});
-    // newMasterKegList[newKeg.id] = newMasterKegList[newKeg.id];
-    this.setState({masterKegList: newMasterKegList});
-  }
+
 
   return (
     <div className="bodyDiv">
@@ -47,5 +45,6 @@ function Body {
     </div>
   );
 }
-}
-export default Body;
+
+
+Body.propTypes = {onAgeConfirmation: PropTypes.func};
