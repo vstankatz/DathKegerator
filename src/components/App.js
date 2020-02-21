@@ -14,7 +14,7 @@ export default class App extends React.Component {
       kegsVisibleOnPage: false,
       masterKegList: [],
       selectedKeg: null,
-      pourPint: -1
+      pintTotal: null
     }
     this.handleTappingNewKeg = this.handleTappingNewKeg.bind(this);
     this.handleSelectedKegCorrection = this.handleSelectedKegCorrection.bind(this);
@@ -33,8 +33,8 @@ export default class App extends React.Component {
     console.log(this.state.selectedKeg);
   }
 
-  handlePouringGlass(){
-
+  handlePouringGlass(size){
+    this.setState({pintTotal: size})
   }
 
   handleAgeCheck(){
@@ -47,7 +47,7 @@ export default class App extends React.Component {
     <Header/>
     <Switch>
     <Route exact path='/' component={Body} />
-    <Route exact path='/home' render={(props) => <Body kegList={this.state.masterKegList} onSelectedKegCorrection={this.handleSelectedKegCorrection} selectedKeg={this.state.selectedKeg}/>} />
+    <Route exact path='/home' render={(props) => <Body kegList={this.state.masterKegList} pintTotal={this.state.pintTotal} onPouringGlass={this.handlePouringGlass} onSelectedKegCorrection={this.handleSelectedKegCorrection} selectedKeg={this.state.selectedKeg}/>} />
     <Route exact path='/addkeg' render={() => (<AddKeg onTappingNewKeg={this.handleTappingNewKeg}/>)} />
     <Route exact path='/editkeg/{:id}' component={EditKeg} />
     </Switch>
