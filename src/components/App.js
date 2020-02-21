@@ -4,6 +4,7 @@ import AddKeg from './AddKeg';
 import EditKeg from './EditKeg';
 import SiteController from './AgeCheck';
 import Body from './Body';
+import Header from './Header';
 import { Switch, Route} from 'react-router-dom';
 
 export default class App extends React.Component {
@@ -26,12 +27,26 @@ export default class App extends React.Component {
       masterKegList: [...this.state.masterKegList, newKeg]
     });
   }
+
+  handleSelectedKegCorrection(selectedKeg){
+
+  }
+
+  handlePouringGlass(){
+
+  }
+
+  handleAgeCheck(){
+
+  }
+
   render(){
   return (
     <div className="App">
+    <Header/>
     <Switch>
     <Route exact path='/' component={Body} />
-    <Route exact path='/home' component={Body} />
+    <Route exact path='/home' render={() => <Body kegList={this.state.masterKegList}/>} />
     <Route exact path='/addkeg' render={() => (<AddKeg onTappingNewKeg={this.handleTappingNewKeg}/>)} />
     <Route exact path='/editkeg' component={EditKeg} />
     </Switch>
