@@ -23,9 +23,18 @@ var masterKegList = [
   }
 ];
 
-function Body() {
+function Body {
+
+
+  handleTappingNewKeg(newKeg) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKeg.id]: newKeg});
+    // newMasterKegList[newKeg.id] = newMasterKegList[newKeg.id];
+    this.setState({masterKegList: newMasterKegList});
+  }
+
   return (
     <div className="bodyDiv">
+    <Header/>
     <hr/>
     {masterKegList.map((keg, index) =>
       <Keg name={keg.name}
@@ -38,5 +47,5 @@ function Body() {
     </div>
   );
 }
-
+}
 export default Body;
