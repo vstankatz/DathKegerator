@@ -26,7 +26,7 @@ var masterKegList = [
 ];
 
 export default function Body(props) {
-
+console.log(props);
 let optionalWindow = null;
   if (props.selectedKeg != null){
     console.log('hit');
@@ -45,7 +45,8 @@ let optionalWindow = null;
       price={keg.price}
       id={keg.id}
       key={index}
-      onSelectedKegCorrection={props.onSelectedKegCorrection}/>
+      onSelectedKegCorrection={props.onSelectedKegCorrection}
+      onPouringGlass={props.onPouringGlass}/>
     )}
 
     </div>
@@ -55,5 +56,6 @@ let optionalWindow = null;
 Body.propTypes = {
   kegList: PropTypes.array,
   onSelectedKegCorrection: PropTypes.func,
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.object,
+  pintTotal: PropTypes.object
 };
