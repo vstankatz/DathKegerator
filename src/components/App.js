@@ -28,8 +28,9 @@ export default class App extends React.Component {
     });
   }
 
-  handleSelectedKegCorrection(selectedKeg){
-
+  handleSelectedKegCorrection(keg){
+    this.setState({selectedKeg: keg});
+    console.log(this.state.selectedKeg);
   }
 
   handlePouringGlass(){
@@ -46,9 +47,9 @@ export default class App extends React.Component {
     <Header/>
     <Switch>
     <Route exact path='/' component={Body} />
-    <Route exact path='/home' render={() => <Body kegList={this.state.masterKegList}/>} />
+    <Route exact path='/home' render={(props) => <Body kegList={this.state.masterKegList} onSelectedKegCorrection={this.handleSelectedKegCorrection} selectedKeg={this.state.selectedKeg}/>} />
     <Route exact path='/addkeg' render={() => (<AddKeg onTappingNewKeg={this.handleTappingNewKeg}/>)} />
-    <Route exact path='/editkeg' component={EditKeg} />
+    <Route exact path='/editkeg/{:id}' component={EditKeg} />
     </Switch>
     </div>
   );
