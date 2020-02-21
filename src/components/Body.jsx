@@ -2,6 +2,7 @@ import React from 'react';
 import './Body.css';
 import Keg from './Keg';
 import PropTypes from 'prop-types';
+import EditKeg from './EditKeg';
 
 var masterKegList = [
   {
@@ -26,20 +27,25 @@ var masterKegList = [
 
 export default function Body(props) {
 
-
+let optionalWindow = null;
+  if (props.selectedKeg != null){
+    console.log('hit');
+    optionalWindow = <EditKeg selectedKeg={props.selectedKeg}/>
+  }
 
 
   return (
     <div className="bodyDiv">
-
     <hr/>
+    {optionalWindow}
     {props.kegList.map((keg, index) =>
       <Keg name={keg.name}
       content={keg.content}
       size={keg.size}
       price={keg.price}
       id={keg.id}
-      key={index}/>
+      key={index}
+      onSelectedKegCorrection={props.onSelectedKegCorrection}/>
     )}
 
     </div>
@@ -47,5 +53,7 @@ export default function Body(props) {
 }
 
 Body.propTypes = {
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  onSelectedKegCorrection: PropTypes.func,
+  selectedKeg: PropTypes.object
 };
