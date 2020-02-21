@@ -1,7 +1,6 @@
 import React from 'react';
 import './Body.css';
 import Keg from './Keg';
-import Header from './Header';
 import PropTypes from 'prop-types';
 
 var masterKegList = [
@@ -32,13 +31,14 @@ export default function Body(props) {
 
   return (
     <div className="bodyDiv">
-    <Header/>
+
     <hr/>
-    {masterKegList.map((keg, index) =>
+    {props.kegList.map((keg, index) =>
       <Keg name={keg.name}
       content={keg.content}
       size={keg.size}
       price={keg.price}
+      id={keg.id}
       key={index}/>
     )}
 
@@ -46,5 +46,6 @@ export default function Body(props) {
   );
 }
 
-
-Body.propTypes = {onAgeConfirmation: PropTypes.func};
+Body.propTypes = {
+  kegList: PropTypes.array
+};
