@@ -7,39 +7,47 @@ class SiteController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ageCheckCompleted: false
-      masterKegList: {},
+      kegsVisibleOnPage: false,
+      masterKegList: [],
       selectedKeg: null,
       pourPint: -1
     }
-    this.handleAgeCheck = this.handleAgeCheck.bind(this);
     this.handleTappingNewKeg = this.handleTappingNewKeg.bind(this);
     this.handleSelectedKegCorrection = this.handleSelectedKegCorrection.bind(this);
     this.handlePouringGlass = this.handlePouringGlass.bind(this);
+    this.handleAgeCheck = this.handleAgeCheck.bind(this);
   }
 
   handleAgeCheck(){
-    this.setState({ageCheckCompleted: true})
+    this.setState({kegsVisibleOnPage: true})
+    console.log('kegsOnPage set to' + this.state.kegsVisibleOnPage);
+  }
+
+handleTappingNewKeg(newKeg) {
+    let newMasterKegList = Object.assign({}, this.state.masterKegList, {[newKeg.id]: newKeg});
+    // newMasterKegList[newKeg.id] = newMasterKegList[newKeg.id];
+    this.setState({masterKegList: newMasterKegList});
   }
 
   render(){
-    let currentlyVisibleKegs = null;
-    if (this.state.ageCheckCompleted) {
-      currentlyVisibleKegs = (
-        <Body />
+    let currentlyVisibleContent = null;
+    if (this.state.kegsVisibleOnPage) {
+      console.log('hit');
+      currentlyVisibleContent = (
       )
     } else {
-      currentlyVisibleKegs = (
-        <AgeCheck onAgeCheck = {this.handleAgeCheck}/>
+      currentlyVisibleContent = (
+        <Body onAgeConfirmation={this.props.onAgeConfirmation}/>
       )
     }
 
   return(
     <div>
+    {currentlyVisibleContent}
     </div>
   )
 }
 }
 export default SiteController;
 
-SiteController.propTypes = { onAgeCheck: PropTypes.func}
+SiteController.propTypes = { onAgeConfirmation: PropTypes.func}
