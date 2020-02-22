@@ -9,9 +9,10 @@ function EditKeg(props) {
   let _price = props.selectedKeg.price;
   let _size = props.selectedKeg.size;
   let handleUpdatingKeg = null;
+  let loo = null;
   return (
     <div className="editKegDiv">
-    <form onSubmit={handleUpdatingKeg} className='form'>
+    <form onSubmit={handleUpdatingKeg} onChange={loo} className='form'>
     <div className='formTitle'>
     <h2>Add a Keg</h2>
     </div>
@@ -22,6 +23,7 @@ function EditKeg(props) {
     ref={input => {
       _name = input;
     }}
+    onChange="loo()"
     value={props.selectedKeg.name}/>
     </div>
     <div className='numberDiv'>
@@ -33,6 +35,7 @@ function EditKeg(props) {
     ref={input => {
       _content = input;
     }}
+    onChange="loo()"
     value={props.selectedKeg.content}
     step=".01"
     min='3'
@@ -48,6 +51,7 @@ function EditKeg(props) {
     ref={input => {
       _price = input;
     }}
+    onChange="loo()"
     value={props.selectedKeg.price}
     step='.01'
     min='.50'
@@ -64,6 +68,7 @@ function EditKeg(props) {
     }}
     name='size'
     className='size'
+    onChange="loo()"
     value='cornelius'/>
     <span className='allSpan'><span className='bigSpan'>Cornelius Keg <span className='smallSpan'>40 pints</span></span></span></label>
 
