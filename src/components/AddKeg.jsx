@@ -28,7 +28,7 @@ function AddKeg(props) {
   return (
     <div className="addKegDiv">
     <form onSubmit={handleTappingNewKeg} className='form'>
-    <div class='formTitle'>
+    <div className='formTitle'>
     <h2>Add a Keg</h2>
     </div>
     <div className='nameDiv'>
@@ -70,14 +70,14 @@ function AddKeg(props) {
     max='100'/>
     </span>
     </div>
-    <div className='addRadio'>
+    <div className='addRadio'
+    ref={input => {
+          _size = input;
+        }}>
     <label className='cornelius'>
     <input
     type='radio'
     id='cornelius'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='cornelius'/>
@@ -87,9 +87,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='sixth'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='sixth'/>
@@ -99,9 +96,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='quarter'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='quarter'/>
@@ -111,9 +105,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='slim'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='slim'/>
@@ -123,9 +114,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='half'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='half'/>
@@ -135,9 +123,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='litre'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='litre'/>
@@ -147,9 +132,6 @@ function AddKeg(props) {
     <input
     type='radio'
     id='mini'
-    ref={input => {
-      _size = input;
-    }}
     name='size'
     className='size'
     value='mini'/>
