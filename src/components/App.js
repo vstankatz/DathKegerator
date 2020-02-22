@@ -28,8 +28,19 @@ export default class App extends React.Component {
     });
   }
 
-  handleSelectedKegCorrection(keg){
-    this.setState({selectedKeg: keg});
+  handleSelectedKegCorrection(kegSelected){
+    let kegCopyList = this.state.masterKegList.map((keg) => {
+      if (keg.id === kegSelected.id) {
+        keg.name = kegSelected.name;
+        keg.content = kegSelected.content;
+        keg.price = kegSelected.price;
+        keg.size = kegSelected.size;
+      }
+      return keg;
+    })
+    this.setState((prevState, props) => ({
+      kegList: kegCopyList
+    }));
     console.log(this.state.selectedKeg);
   }
 
@@ -46,7 +57,7 @@ export default class App extends React.Component {
     <div className="App">
     <Header/>
     <Switch>
-    <Route exact path='/' component={Body} />
+    <Route exact path='/' render={(props) => <Body kegList={this.state.masterKegList} pintTotal={this.state.pintTotal} onPouringGlass={this.handlePouringGlass} onSelectedKegCorrection={this.handleSelectedKegCorrection} selectedKeg={this.state.selectedKeg}/>} />
     <Route exact path='/home' render={(props) => <Body kegList={this.state.masterKegList} pintTotal={this.state.pintTotal} onPouringGlass={this.handlePouringGlass} onSelectedKegCorrection={this.handleSelectedKegCorrection} selectedKeg={this.state.selectedKeg}/>} />
     <Route exact path='/addkeg' render={() => (<AddKeg onTappingNewKeg={this.handleTappingNewKeg}/>)} />
     <Route exact path='/editkeg/{:id}' component={EditKeg} />
